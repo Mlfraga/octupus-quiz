@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "owner": "glaros",
+    "name": "octupus-quiz",
+    "slug": "octupus-quiz",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "requireFullScreen": true,
+      "supportsTablet": true,
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "com.googleusercontent.apps.824008646225-sa1qtdsrghqm778bk8hn1lek11sisd21"
+        }
+      },
+      "bundleIdentifier": "com.octupusquiz"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.octupusquiz"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}

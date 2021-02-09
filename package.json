@@ -1,0 +1,85 @@
+{
+  "name": "octupus-quiz",
+  "private": true,
+  "version": "1.0.0",
+  "author": "Matheus Fraga' <@Mlfraga>",
+  "license": "MIT",
+  "engines": {
+    "node": ">= 12.16.x",
+    "yarn": ">= 1.22.x",
+    "npm": ">= 6.14.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mlfraga/octupus-quiz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Mlfraga/octupus-quiz.git/issues"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/**/*"
+    ],
+    "nohoist": [
+      "**/typeorm/**",
+      "**/typeorm"
+    ]
+  },
+  "scripts": {
+    "lint:fix": "eslint --fix packages --ext ts,tsx",
+    "mobile": "yarn workspace @octupus-quiz/mobile",
+    "postinstall": "expo-yarn-workspaces check-workspace-dependencies"
+  },
+  "lint-staged": {
+    "packages/**/*.{ts,tsx}": [
+      "yarn lint:fix",
+      "git add -A"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "git-branch-is -r \"^((?!main).)*$\" && lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/node": "^7.10.1",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-decorators": "^7.10.5",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-typescript": "^7.10.1",
+    "@commitlint/cli": "^7.6.1",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@commitlint/travis-cli": "^7.6.1",
+    "@typescript-eslint/eslint-plugin": "^3.2.0",
+    "@typescript-eslint/parser": "^3.2.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "babel-plugin-transform-typescript-metadata": "^0.3.0",
+    "eslint": "6.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-import-resolver-typescript": "^2.0.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-jest": "^22.4.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.20.3",
+    "eslint-plugin-react-hooks": "^4.0.5",
+    "git-branch-is": "^4.0.0",
+    "husky": "^4.3.0",
+    "jest": "^26.4.0",
+    "jest-puppeteer": "^4.4.0",
+    "lerna": "^3.22.1",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.2.0",
+    "ts-node-dev": "^1.0.0-pre.56",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.9.3"
+  }
+}
